@@ -1,11 +1,16 @@
-import { AfterContentInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import { AfterContentChecked
+  , AfterContentInit,
+   AfterViewChecked,
+   AfterViewInit,
+    Component,
+     ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnChanges ,OnInit,DoCheck,AfterContentInit{
+export class DemoComponent implements OnChanges ,OnInit,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
 title:string = "Example";
 @Input() message:string;
 @ViewChild('temp') tempPara:ElementRef;
@@ -19,8 +24,8 @@ constructor(){
 }
 ngOnChanges(changes:SimpleChanges){
   console.log("ngOnChanges is called");
-  // console.log(this.message);
-  // console.log(changes);
+  console.log(this.message);
+  console.log(changes);
 }
 ngOnInit(){
   console.log("ngOnInit is called");
@@ -34,5 +39,22 @@ ngDoCheck(){
 ngAfterContentInit(){
   console.log("ngAfterContentInit is called");
   console.log("From ngAfterContentInit",this.tempE1.nativeElement);
+}
+ngAfterContentChecked(){
+  console.log("ngAfterContentChecked is called");
+  console.log("From ngAfterContentChecked",this.tempE1);
+}
+ngAfterViewInit(){
+  console.log("ngAfterViewInit is called");
+  console.log("From ngAfterContentChecked",this.tempE1);
+
+}
+ngAfterViewChecked(){
+  console.log("ngAfterViewChecked is called");
+
+}
+ngOnDestroy(){
+  console.log("ngOnDestroy is called");
+
 }
 }
