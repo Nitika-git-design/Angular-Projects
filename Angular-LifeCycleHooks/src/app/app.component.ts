@@ -10,4 +10,9 @@ export class AppComponent {
   console.log("App Component Constructor is called");
   }
   title = 'Angular-LifeCycleHooks';
+  inputVal:string;
+  onBtnClicked(inputE1:HTMLInputElement){
+    this.inputVal = inputE1.value;
+
+  }
 }

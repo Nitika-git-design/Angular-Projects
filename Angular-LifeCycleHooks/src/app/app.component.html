@@ -1,5 +1,5 @@
 <div class="container">
-  <app-demo [message]="'Hello ,World'" ></app-demo>
-  <br>
-  <button>Show/Hide</button>
+  <input type="text" #inputE1>
+  <button (click)="onBtnClicked(inputE1)">Show/Hide</button>
+  <app-demo [message]="inputVal" ></app-demo>
 </div>
