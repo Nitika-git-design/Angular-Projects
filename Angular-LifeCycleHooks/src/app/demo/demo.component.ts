@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import { AfterContentInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -9,6 +9,7 @@ export class DemoComponent implements OnChanges ,OnInit,DoCheck,AfterContentInit
 title:string = "Example";
 @Input() message:string;
 @ViewChild('temp') tempPara:ElementRef;
+@ContentChild('temp1') tempE1:ElementRef;
 constructor(){
   console.log("Demo Component Constructor is called");
   //when is constructor is called ,by that time,none of the input properties are updated and available to use
@@ -27,8 +28,11 @@ ngOnInit(){
 }
 ngDoCheck(){
   console.log("ngDoCheck is called");
+  console.log("From ngDoCheck",this.tempE1);
+  
 }
 ngAfterContentInit(){
   console.log("ngAfterContentInit is called");
+  console.log("From ngAfterContentInit",this.tempE1.nativeElement);
 }
 }
