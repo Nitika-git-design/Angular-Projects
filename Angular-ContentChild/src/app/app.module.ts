@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
-import { TestComponent } from './test/test.component';
+import { TestComponent } from './parent/test/test.component';
 
 @NgModule({
   declarations: [

@@ -3,9 +3,23 @@
         <h3>Some Heading</h3>
         <p #para>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+        <p #para>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         </p>
-        <app-test></app-test>
+        <p #para>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+
+        <app-test [name]="'Golu'"></app-test>
+        <app-test [name]="'Gol'"></app-test>
+        <app-test [name]="'Gols'"></app-test>
+        <app-test [name]="'Goli'"></app-test>
+
     </app-child>
     <button (click)="showvalue()">show value</button>
   </div>
