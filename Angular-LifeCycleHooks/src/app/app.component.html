@@ -1,5 +1,7 @@
 <div class="container">
   <input type="text" #inputE1>
   <button (click)="onBtnClicked(inputE1)">Show/Hide</button>
-  <app-demo [message]="inputVal" ></app-demo>
+  <app-demo [message]="inputVal" >
+    <p>This is the projected Content from Demo</p>
+  </app-demo>
 </div>

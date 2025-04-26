@@ -1,11 +1,11 @@
-import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import { AfterContentInit, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnChanges ,OnInit{
+export class DemoComponent implements OnChanges ,OnInit,DoCheck,AfterContentInit{
 title:string = "Example";
 @Input() message:string;
 @ViewChild('temp') tempPara:ElementRef;
@@ -24,6 +24,11 @@ ngOnChanges(changes:SimpleChanges){
 ngOnInit(){
   console.log("ngOnInit is called");
   // console.log(this.tempPara.nativeElement); //this will return an Error as this.tempPara is undefined as at the time when ngOnInit is called the @ViewChild is not available
-  
+}
+ngDoCheck(){
+  console.log("ngDoCheck is called");
+}
+ngAfterContentInit(){
+  console.log("ngAfterContentInit is called");
 }
 }
