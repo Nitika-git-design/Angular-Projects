@@ -10,7 +10,7 @@ export class ChildComponent {
   @ContentChild('para') paraGraphE1: ElementRef;
   @ContentChild(TestComponent) testEl: TestComponent;
   @ContentChildren('para') paraAll:QueryList<ElementRef>;
-  @ContentChildren(TestComponent) testAll:QueryList<ElementRef>;
+  @ContentChildren(TestComponent) testAll:QueryList<TestComponent>;
 
   styleElment(){
     console.log(this.paraGraphE1.nativeElement);
