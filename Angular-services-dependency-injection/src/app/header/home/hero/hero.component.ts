@@ -5,7 +5,7 @@ import { subscribtion } from 'src/app/service/subscribtion.service';
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
-  providers:[subscribtion]//what to provide
+  //what to provide
 })
 export class HeroComponent {
   //how to provide Dependency
