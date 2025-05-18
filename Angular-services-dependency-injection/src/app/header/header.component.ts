@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
+import { subscribtion } from '../service/subscribtion.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers:[subscribtion]
 })
 export class HeaderComponent {
+  constructor(private subService:subscribtion){
+
+  }
   selectedTab:string = 'Home';
   AdminClicked(){
     this.selectedTab = 'Admin';
@@ -14,12 +19,6 @@ export class HeaderComponent {
     this.selectedTab = 'Home';
   }
   onSubscribe(){
-//add user to the Database
-
-//send email to the user with the subscription details
-
-//Allow the user to access the services
-alert("Thank you for subscribing.You can access the services now")
-
+   this.subService.onSubscribeClicked('Monthly');
   }
 }
