@@ -5,7 +5,6 @@ import { subscribtion } from '../service/subscribtion.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers:[subscribtion]
 })
 export class HeaderComponent {
   constructor(private subService:subscribtion){

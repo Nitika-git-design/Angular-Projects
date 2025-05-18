@@ -8,6 +8,7 @@ import { HomeComponent } from './header/home/home.component';
 import { SideBarComponent } from './header/home/side-bar/side-bar.component';
 import { HeroComponent } from './header/home/hero/hero.component';
 import { UserDetailsComponent } from './header/admin/user-details/user-details.component';
+import { subscribtion } from './service/subscribtion.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UserDetailsComponent } from './header/admin/user-details/user-details.c
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [subscribtion],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
