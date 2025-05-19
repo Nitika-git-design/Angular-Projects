@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({
+    providedIn:'root'
+})
 export class loggerService{
   logMessage(name:string,status:string){
-    console.log(`A new User with ${name} and ${status} is added`);
+    alert(`A new User with ${name} and ${status} is added`);
     
   }
 }

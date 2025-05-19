@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { subscribtion } from 'src/app/service/subscribtion.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { subscribtion } from 'src/app/service/subscribtion.service';
 })
 export class HeroComponent {
   //how to provide Dependency
-  constructor(private subService:subscribtion){
+  // constructor(private subService:subscribtion){
 
-  }
+  // }
+  subService = inject(subscribtion)
   
   onSubscribe(){
    this.subService.onSubscribeClicked('Yearly');
