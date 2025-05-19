@@ -18,6 +18,5 @@ status:string = 'Active';
 
 createNewUSer(){
   this.userService.createNewUser(this.name,this.gender,this.subType,this.status);
-  console.log(this.userService.user)
 }
 }

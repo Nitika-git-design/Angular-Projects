@@ -12,6 +12,7 @@ import { subscribtion } from './service/subscribtion.service';
 import { UserListComponent } from './header/admin/user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './service/user.service';
+import { loggerService } from './service/logger.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { UserService } from './service/user.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [subscribtion,UserService],
+  providers: [subscribtion,UserService,loggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
