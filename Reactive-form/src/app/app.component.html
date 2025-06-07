@@ -1,29 +1,34 @@
 <section class="container">
   <header>Registration Form</header>
 
-  <form class="form">
+  <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onFormSubmit()">
     <div class="column">
       <div class="input-box">
-        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="First Name" formControlName="firstName" />
+        <small *ngIf="reactiveForm.get('firstName').invalid && reactiveForm.get('firstName').touched">*First Name is invalid</small>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="Last Name" formControlName="lastName"/>
+        <small *ngIf="reactiveForm.get('lastName').invalid && reactiveForm.get('lastName').touched">*Last Name is invalid</small>
+
       </div>
     </div>    
 
     <div class="input-box">
-      <input type="text" placeholder="Email" />
+      <input type="text" placeholder="Email" formControlName="email"/>
+      <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">*email is invalid</small>
+
     </div>
 
     <div class="column">
       <div class="input-box">
-        <input type="text" placeholder="username" />
+        <input type="text" placeholder="username" formControlName="username"/>
         <button class="btn-gen-username" type="button">
           Create a Username
         </button>
       </div>
       <div class="input-box">
-        <input type="date" placeholder="Date of Birth" />
+        <input type="date" placeholder="Date of Birth" formControlName="dob"/>
       </div>
     </div>
 
@@ -33,26 +38,26 @@
       <h3>Gender</h3>
       <div class="gender-option">
         <div class="gender">
-          <input type="radio" value="male" id="check-male" />
+          <input type="radio" value="Male" id="check-male" formControlName="gender"/>
           <label for="check-male">Male</label>
         </div>
         <div class="gender">
-          <input type="radio" value="female" id="check-female" />
+          <input type="radio" value="Female" id="check-female" formControlName="gender"/>
           <label for="check-female">Female</label>
         </div>
         <div class="gender">
-          <input type="radio" value="other" id="check-other" />
+          <input type="radio" value="Other" id="check-other" formControlName="gender"/>
           <label for="check-other">Prefer not to say</label>
         </div>
       </div>
     </div>
 
-    <div class="input-box address">
+    <div class="input-box address" formGroupName="address">
       <label>Address</label>
-      <input type="text" placeholder="Street address" />
+      <input type="text" placeholder="Street address" formControlName="street" />
       <div class="column">
         <div class="select-box">
-          <select name="country">
+          <select name="country" formControlName="country">
             <option hidden>Country</option>
             <option>America</option>
             <option>Japan</option>
@@ -60,11 +65,11 @@
             <option>Nepal</option>
           </select>
         </div>
-        <input type="text" placeholder="City" />
+        <input type="text" placeholder="City" formControlName="city"/>
       </div>
       <div class="column">
-        <input type="text" placeholder="Region" />
-        <input type="number" placeholder="Postal code" />
+        <input type="text" placeholder="Region" formControlName="region"/>
+        <input type="number" placeholder="Postal code" formControlName="postal"/>
       </div>
     </div>
 
@@ -72,14 +77,14 @@
     <div class="input-box skills" formArrayName="skills">
       <h4>Add Skills</h4>
       <div class="column">
-        <input type="text" placeholder="Add Skill...">
+        <input type="text" placeholder="Add Skill..." formControlName="skills">
         <button type="button" class="btn-add-delete">Delete</button>
       </div> 
     </div>
     <button type="button" class="btn-add-delete">Add Skills</button>
 
     <!--HTML for Experience Form Array -->
-    <div class="input-box">
+    <!-- <div class="input-box">
       <div class="experience">
         <label>Experience</label>
         <input type="text" placeholder="Company Name" />
@@ -102,9 +107,9 @@
         <button type="button" class="btn-add-delete">Delete Experience</button>
       </div>
     </div>
-    <button type="button" class="btn-add-delete">Add Experience</button>
+    <button type="button" class="btn-add-delete">Add Experience</button> -->
 
-    <input type="submit" value="Submit" class="submit-btn"> 
+    <input type="submit" value="Submit" class="submit-btn" [disabled]="reactiveForm.invalid"> 
     <!-- [disabled]="!reactiveForm.valid" -->
   </form>
 </section>
