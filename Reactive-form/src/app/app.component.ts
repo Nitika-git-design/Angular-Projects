@@ -24,11 +24,11 @@ export class AppComponent implements OnInit{
       country :new FormControl('India',Validators.required),
       region :new FormControl(null),
       postal :new FormControl(null,Validators.required),
-      skills:new FormArray([
-        new FormControl(null),
-        new FormControl(null),
-        new FormControl(null)
-      ])
+      // skills:new FormArray([
+      //   new FormControl(null),
+      //   new FormControl(null),
+      //   new FormControl(null)
+      // ])
        })
     })
   }
