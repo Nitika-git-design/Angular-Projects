@@ -22,17 +22,6 @@ import { CourseService } from './Services/course.service';
 
 //Define routes
 
-const routes:Routes=[
-  // {path:'' , redirectTo:'Home',pathMatch:'full'},
-  {path:'' ,component:HomeComponent},
-  {path:'Home' ,component:HomeComponent},
-  {path:'About' ,component:AboutComponent},
-  {path:'Contact' ,component:ContactComponent},
-  {path:'Course' ,component:CoursesComponent},
-  {path:'Course/Course/:id' ,component:CourseDetailsComponent},
-  {path:'**' ,component:NotFoundComponent},
-
-]
 
 @NgModule({
   declarations: [
@@ -52,7 +41,6 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
