@@ -17,6 +17,7 @@ import { CourseDetailsComponent } from './courses/course-details/course-details.
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CourseService } from './Services/course.service';
 
 
 //Define routes
@@ -28,6 +29,7 @@ const routes:Routes=[
   {path:'About' ,component:AboutComponent},
   {path:'Contact' ,component:ContactComponent},
   {path:'Course' ,component:CoursesComponent},
+  {path:'Course/Course/:id' ,component:CourseDetailsComponent},
   {path:'**' ,component:NotFoundComponent},
 
 ]
@@ -52,7 +54,7 @@ const routes:Routes=[
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
