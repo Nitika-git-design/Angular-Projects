@@ -14,6 +14,23 @@ import { TestimonyComponent } from './home/testimony/testimony.component';
 import { ServicesComponent } from './home/services/services.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+
+//Define routes
+
+const routes:Routes=[
+  // {path:'' , redirectTo:'Home',pathMatch:'full'},
+  {path:'' ,component:HomeComponent},
+  {path:'Home' ,component:HomeComponent},
+  {path:'About' ,component:AboutComponent},
+  {path:'Contact' ,component:ContactComponent},
+  {path:'Course' ,component:CoursesComponent},
+  {path:'**' ,component:NotFoundComponent},
+
+]
 
 @NgModule({
   declarations: [
@@ -32,7 +49,8 @@ import { CourseDetailsComponent } from './courses/course-details/course-details.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
