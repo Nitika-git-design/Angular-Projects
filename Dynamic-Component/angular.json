@@ -3,23 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "i18n-demo": {
+    "Dynamic-Component": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-       "i18n": {
-                "sourceLocale": "en",
-                "locales": {
-                    "fr": "src/i18n/messages.fr.xlf"
-                }
-            },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/i18n-demo",
+            "outputPath": "dist/dynamic-component",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -49,10 +43,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all",
-               "localize": [
-                                "fr"
-                            ]
+              "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
@@ -61,12 +52,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "fr": {
-                            "localize": [
-                                "fr"
-                            ]
-                        }
+            }
           },
           "defaultConfiguration": "production"
         },
@@ -74,21 +60,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "i18n-demo:build:production"
+              "browserTarget": "Dynamic-Component:build:production"
             },
             "development": {
-              "browserTarget": "i18n-demo:build:development"
-            },
-            "fr": {
-                            "buildTarget": "angular-i18n-demo:build:fr"
-                        }
+              "browserTarget": "Dynamic-Component:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "i18n-demo:build"
+            "browserTarget": "Dynamic-Component:build"
           }
         },
         "test": {

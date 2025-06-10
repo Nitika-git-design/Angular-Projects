@@ -1,0 +1,15 @@
+<!-- src/i18n/messages.fr.xlf -->
+<xliff version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext">
+    <body>
+      <trans-unit id="appTitle">
+        <source>Welcome to our Angular i18n Demo!</source>
+        <target>Bienvenue dans notre démonstration Angular i18n !</target>
+      </trans-unit>
+      <trans-unit id="appDescription">
+        <source>This application supports multiple languages.</source>
+        <target>Cette application prend en charge plusieurs langues.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
