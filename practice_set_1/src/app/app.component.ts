@@ -15,10 +15,16 @@ export class AppComponent {
   // let age = 26
   ngOnInit(){
   let name ='Nitika';
+  let users=['Golu','Nitu','Nitika'];
   let age = 26
   console.log(`My name is ${name} and I am ${age} years old`);
+  users.forEach(element => { 
+    console.log(`Welcome all ${users}`);
+    
+    
+  });
   }
-  
+
   
  }
 
