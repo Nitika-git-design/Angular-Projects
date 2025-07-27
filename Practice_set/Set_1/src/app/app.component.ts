@@ -10,4 +10,8 @@ export class AppComponent {
   greet(){
     console.log(this.title,"console")
   }
+  siteUrl(){
+    console.log(window.location.href);
+    
+  }
 }
