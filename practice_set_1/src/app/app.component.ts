@@ -20,8 +20,6 @@ export class AppComponent {
   console.log(`My name is ${name} and I am ${age} years old`);
   users.forEach(element => { 
     console.log(`Welcome all ${users}`);
-    
-    
   });
   }
 
