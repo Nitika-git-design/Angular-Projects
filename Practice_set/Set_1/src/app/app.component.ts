@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Set_1';
+  greet(){
+    console.log(this.title,"console")
+  }
 }
